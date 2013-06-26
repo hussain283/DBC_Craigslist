@@ -1,0 +1,32 @@
+<div class="container">
+  <% if @post.id %>
+  <h1>Edit Item In: <%= @category.title %></h1>
+  <form id="edit_post" action="/category/<%= @category.id %>/post/update/<%= @post.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+  <% else %>
+  <h1>Add New Item To: <%= @category.title %></h1>
+  <form id="new_post" action="/category/<%= @category.id %>/post/create" method="post">
+  <% end %>
+      <p>Title</p>
+      <input id="title" type="text" name="post[title]" value="<%= @post.title %>">
+      <br>
+      <p>Description</p>
+      <textarea id="description" cols="40" rows="5" name="post[description]" value="<%= @post.description %>">Enter Some Stuff Here</textarea>
+      <br>
+      <p>Price?</p>
+      <input id="price" type="text" name="post[price]" value="<%= @post.price %>">
+      <br>
+      <p>Email</p>
+      <input id="email" type="text" name="post[email]" value="<%= @post.email %>">
+      <br>
+      <input id="category_id" type="hidden" name="post[category_id]" value="<%= @category.id %>">
+      <br>
+      <br>
+
+      <% if @post.id %>
+        <input type="submit" value="Update!!">
+      <% else %>
+        <input type="submit" value="Create!!">
+      <% end %>
+  </form>
+</div>

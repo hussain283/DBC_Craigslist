@@ -1,0 +1,12 @@
+<div class="container">
+  <h1><%= @post.title %></h1>
+  <h3><%= @post.price %></h3>
+  <p><%= @post.description %></p>
+  
+  <h3>Contact me at:</h3>
+  <h3><%= @post.email %></h3>
+
+  <h3>Pictures!!!</h3>
+  <br>
+  <a href="/category/<%= @category.id %>">Back To <%= @category.title %></a>
+</div>

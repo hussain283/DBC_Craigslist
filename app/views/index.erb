@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Welcome to Craigslist!</h1>
+  <br>
+  
+  <% if @message %>
+    <h3><%= @message %></h3>
+    <br>
+  <% end %>
+
+  <table>
+    <tr>
+    <th width="20%">Title</th>
+    <th width="60%">Description</th>
+    <th width="20%">How Many?</th>
+    </tr>
+    
+    <% @categories.each do |category| %>
+      <%= erb :category, :locals => { :category => category } %>
+    <% end %>
+  </table>
+  
+  <br>
+  <a href="/category/new">Make New Category</a>
+</div>
